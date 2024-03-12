@@ -2,6 +2,7 @@ package com.example.Report_app.Controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,8 +38,8 @@ public class ReportController {
 
 	private void init(Model model) {
 		model.addAttribute("search", new SearchRequest());
-		model.addAttribute("names", services.getPlaneStatus());
-		model.addAttribute("status", services.getPlanStatuses());
+		model.addAttribute("names",  services.getPlanNames());
+		model.addAttribute("status", services.getPlaneStatus());
 	}
 	
 }

@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
+
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -39,7 +41,7 @@
        
        <td>Gender:</td>
        <td>
-       <form:select path="planstatus">
+       <form:select path="gender">
        <form:option value="gender">--Select--</form:option>
        <form:option value="Male">Male</form:option>
        <form:option value="Female">Female</form:option>
@@ -64,9 +66,30 @@
   
   </table>
   </form:form>
-   <table class="table table=striped table-hover">
-         
-   </table>
+  <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+            <th>Id</th>
+            <th>Holder Name</th>
+            <th>Plan Name</th>
+            <th>plan Status</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+       </tr>
+      </thead>
+      <tbody>
+      <c:foreach items="${plans}" var="plan" varStatus="index" >
+      <tr>
+        <td>${plan.citizenId}</td>
+        <td>${plan.CitizenName}</td>
+        <td>${plan.planName}</td>
+        <td>${plan.planstatus}</td>
+        <td>${plan.planeStartDate}</td>
+        <td>${plan.planEndDate}</td>
+      </tr>
+      </c:foreach>
+      </tbody>
+  </table>
   <hr/>
   Export:   <a href=" ">Excel</a>      <a href=" "> Pdf </a>
   <hr/>

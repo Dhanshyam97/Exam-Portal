@@ -2,8 +2,11 @@ package com.example.Report_app.services;
 
 import java.util.List;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.w3c.dom.Entity;
 
 import com.example.Report_app.Entity.CitizenPlan;
 import com.example.Report_app.repo.CitizenPlanRepository;
@@ -17,20 +20,19 @@ public class ReportServiceImpl implements ReportService{
 
 	@Override
 	public List<String> getPlanNames() {
-		// TODO Auto-generated method stub
-		return null;
+      return planRepo.getPlanName();
 	}
 
 	@Override
 	public List<String> getPlaneStatus() {
-		// TODO Auto-generated method stub
-		return null;
+		return planRepo.getPlanstatus();
 	}
 
 	@Override
 	public List<CitizenPlan> search(SearchRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return planRepo.findAll();
+	
 	}
 
 	@Override

@@ -11,7 +11,8 @@ import com.example.Report_app.request.SearchRequest;
 
 @Service
 public interface ReportService {
-public List<String> getPlanNames();
+  
+	public List<String> getPlanNames();
 	
 	public List<String> getPlaneStatus();
 	
